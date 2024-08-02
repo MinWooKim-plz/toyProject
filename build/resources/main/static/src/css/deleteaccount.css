@@ -1,0 +1,84 @@
+/* 메인 */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px; /* 좌우 여백 추가 */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+/* 회원 탈퇴 박스 */
+.delete-account-container {
+    padding: 20px;
+    display: inline-block;
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+.delete-account-container h2 {
+    color: #759465; /* 헤더 색상 */
+    font-weight: bold; /* 굵은 글씨 */
+    margin-bottom: 40px;
+}
+
+.delete-account-container p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.delete-account-form {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-group input {
+    width: 100%;
+    max-width: 400px; /* 최대 너비 설정 */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    color: #000;
+    font-size: 16px;
+    margin: 20px 0px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.confirm-button, .cancel-button {
+    width: 100px;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.confirm-button {
+    background: #759465;
+}
+
+.confirm-button:hover {
+    background: #557247;
+}
+
+.cancel-button {
+    background: #ccc;
+}
+
+.cancel-button:hover {
+    background: #bbb;
+}

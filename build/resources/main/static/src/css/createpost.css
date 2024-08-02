@@ -1,0 +1,55 @@
+/* 메인 */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* 전체 폼 */
+form {
+    width: 960px;
+    margin: auto;
+}
+
+/* 글쓰기 */
+.page-title {
+    margin: 20px 0px;
+}
+form h3 {
+    margin-top: 40px;
+    margin-bottom: 0px;
+}
+/* 제목 입력 칸 */
+.post-title {
+    width: 480px;
+    height: 25px;
+}
+
+/* 내용 입력 칸 */
+.post-body {
+    width: 960px;
+    height: 640px;
+    font-size: 14px;
+}
+.btn-container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.btn-container button {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 82px;
+    height: 35px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.btn-post{
+    background-color: #759465;
+}
+
+.btn-cancel{
+    background-color:darkgray;
+}

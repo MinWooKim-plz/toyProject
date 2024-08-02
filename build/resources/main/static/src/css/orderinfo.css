@@ -1,0 +1,85 @@
+/* 메인 컨테이너 */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #fff; /* 배경 색상 명확히 지정 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.empty-list{
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.order-history-container {
+    padding: 20px;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.order-table th, .order-table td {
+    border: none;
+    padding: 15px 10px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #333;
+}
+
+.order-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    padding-left: 20px;
+}
+
+.order-table tbody tr {
+    display: table-row;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-table td {
+    padding-left: 20px;
+    text-align: center;
+}
+
+.order-table th:first-child, .order-table td:first-child {
+    width: 10%; /* 주문번호 */
+}
+
+.order-table th:nth-child(2), .order-table td:nth-child(2) {
+    width: 10%; /* 이미지 */
+}
+
+.order-table th:nth-child(3), .order-table td:nth-child(3) {
+    width: 40%; /* 주문상품 이름 및 갯수 */
+}
+
+.order-table th:nth-child(4), .order-table td:nth-child(4) {
+    width: 10%; /* 가격 */
+}
+
+.order-table th:nth-child(5), .order-table td:nth-child(5) {
+    width: 10%; /* 주문일시 */
+}
+
+.order-table td img {
+    max-width: 60px;
+    height: auto;
+}

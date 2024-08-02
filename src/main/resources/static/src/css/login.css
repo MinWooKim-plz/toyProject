@@ -1,0 +1,86 @@
+/* 메인 */
+main {
+    max-width: 780px;
+    margin: 20px auto;
+    padding: 20px; /* 좌우 여백 추가 */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+/* 로그인 박스 */
+.login-container {
+    padding: 100px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.login-form {
+    width: 80%;
+    max-width: 300px;
+    text-align: left; /* 폼 내부 텍스트 왼쪽 정렬 */
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #000;
+    text-align: center; /* 제목 가운데 정렬 */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.form-group input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    color: #000;
+}
+
+button {
+    width: 83%;
+    padding: 10px;
+    background: #5D9CA4;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #4C8991;
+}
+
+.register-link {
+    margin-top: 15px;
+    margin-left: 8%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #000;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

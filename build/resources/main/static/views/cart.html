@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/b3f3cec821.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../src/css/cart.css" />
+    <link rel="stylesheet" href="../src/css/shared.css" />
+    <script src="../src/js/lang.js" defer></script>
+    <title>장바구니</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-content">
+        <a href="/main" style="text-decoration: none">
+          <span class="logo">
+            <img src="../src/assets/logo.png" alt="logo" />
+            <h1 id="site_title">Networker</h1>
+          </span>
+        </a>
+        <div class="menu">
+          <a href="/main" id="menu_home">홈</a>
+          <a href="/views/news.html" id="menu_news">정보</a>
+          <a href="/post/list" id="menu_board">자유게시판</a>
+          <a href="/views/store.html" id="menu_store">스토어</a>
+          <a href="/lawsupport/main" id="menu_law">법률지원</a>
+          <a href="/views/review.html" id="menu_review">기업리뷰</a>
+        </div>
+        <div class="auth-buttons">
+          <a href="/views/login.html" id="login">로그인</a>
+          <a href="/views/signup.html" id="signup">회원가입</a>
+          <div class="profile-icon">
+            <a href="/views/profile.html" id="profile-size"
+            ><img src="../src/assets/profile.png" alt="Profile"
+            /></a>
+          </div>
+          <div class="language-selector">
+            <img
+              src="../src/assets/earth_icon.png"
+              alt="earth"
+              class="earth-icon"
+            />
+            <label for="languageSelector"></label>
+            <select id="languageSelector">
+              <option value="en">English</option>
+              <option value="ko" selected>한국어</option>
+              <option value="zh">中文</option>
+              <option value="ja">日本語</option>
+              <option value="vi">Tiếng Việt</option>
+              <option value="mn">Монгол</option>
+              <option value="ru">Русский</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="cart-container">
+        <h2 class="cart-title">장바구니</h2>
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>이미지</th>
+              <th>상품정보</th>
+              <th>판매가</th>
+              <th>수량</th>
+              <th>합계</th>
+              <th>삭제</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Cart items will be dynamically added here -->
+          </tbody>
+        </table>
+        <div class="cart-summary">
+          <table class="summary-table">
+            <tr>
+              <td>총 상품금액</td>
+              <td class="summary-amount">0원</td>
+            </tr>
+            <tr>
+              <td>총 배송비</td>
+              <td class="shipping">0원</td>
+            </tr>
+            <tr class="summary-total">
+              <td>결제예정금액</td>
+              <td class="total-amount">0원</td>
+            </tr>
+          </table>
+        </div>
+        <div class="clearNpay">
+          <button class="clear-btn">장바구니 비우기</button>
+          <a href="order.html"><button class="payment-btn">결제하기</button></a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <ul class="footer-btn">
+          <li><a href="#">이용약관</a></li>
+          <li>
+            <a href="privacy_Policy.html" style="font-weight: bold"
+              >개인정보처리방침</a
+            >
+          </li>
+          <li><a href="#">문의/신고</a></li>
+          <li><a href="#">광고안내</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="../src/js/cart.js"></script>
+  </body>
+</html>

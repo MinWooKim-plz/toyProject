@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 탈퇴 - Networker</title>
+    <script src="../src/js/lang.js" defer></script>
+    <link rel="stylesheet" href="../src/css/shared.css" />
+    <link rel="stylesheet" href="../src/css/deleteaccount.css">
+    <script src="../src/js/deleteaccount.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+          <a href="/main" style="text-decoration: none">
+            <span class="logo">
+              <img src="../src/assets/logo.png" alt="logo" />
+              <h1 id="site_title">Networker</h1>
+            </span>
+          </a>
+          <div class="menu">
+            <a href="networker.html" id="menu_home">홈</a>
+            <a href="news.html" id="menu_news">정보</a>
+            <a href="board.html" id="menu_board">자유게시판</a>
+            <a href="store.html" id="menu_store">스토어</a>
+            <a href="lawsupport.html" id="menu_law">법률지원</a>
+            <a href="review.html" id="menu_review">기업리뷰</a>
+          </div>
+          <div class="auth-buttons">
+            <div class="profile-icon">
+              <a href="profile.html" id="profile-size"
+                ><img src="../src/assets/profile.png" alt="Profile"
+              /></a>
+            </div>
+            <div class="language-selector">
+              <img src="../src/assets/earth_icon.png" alt="earth" class="earth-icon">
+              <label for="languageSelector"></label>
+              <select id="languageSelector">
+                <option value="en">English</option>
+                <option value="ko" selected>한국어</option>
+                <option value="zh">中文</option>
+                <option value="ja">日本語</option>
+                <option value="vi">Tiếng Việt</option>
+                <option value="mn">Монгол</option>
+                <option value="ru">Русский</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </header>
+  
+    <main>
+        <div class="delete-account-container">
+            <h2>회원 탈퇴 전 다음 내용을 꼭 확인해주세요.</h2>
+            <p>회원 탈퇴 시 모든 데이터가 삭제됩니다.<br>
+               또한 90일 이내에 관리자 및 사용자 계정과 동일한 이메일로 재가입 할 수 없습니다.</p>
+            <p>계속 하시겠습니까?</p>
+            <form id="delete-account-form" class="delete-account-form">
+                <div class="form-group">
+                    <input type="password" id="password" name="password" placeholder="비밀번호를 입력해 주세요." required>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="confirm-button">확인</button>
+                    <button type="button" class="cancel-button" onclick="window.location.href='/views/profile.html'">취소</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <ul class="footer-btn">
+                <li><a href="#">이용약관</a></li>
+                <li><a href="/views/Privacy_Policy.html" style="font-weight: bold;">개인정보처리방침</a></li>
+                <li><a href="#">문의/신고</a></li>
+                <li><a href="#">광고안내</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+</body>
+</html>

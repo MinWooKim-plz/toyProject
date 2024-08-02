@@ -1,0 +1,15 @@
+{
+  "name": "networker",
+  "version": "1.0.0",
+  "description": "외국인 노동자를 위한 커뮤니티 플랫폼 \"Networker\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fuse.js": "^7.0.0"
+  }
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b3f3cec821.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.css">
+    <link rel="stylesheet" href="/src/css/shared.css" />
+    <link rel="stylesheet" href="/src/css/createpost.css">
+
+    <title>게시물 수정</title>
+</head>
+
+<body>
+<header>
+    <div class="header-content">
+        <a href="/main" style="text-decoration: none">
+                <span class="logo">
+                    <img src="/src/assets/logo.png" alt="logo" />
+                    <h1 id="site_title">Networker</h1>
+                </span>
+        </a>
+        <div class="menu">
+            <a href="/main" id="menu_home">홈</a>
+            <a href="/views/news.html" id="menu_news">정보</a>
+            <a href="/post/list" id="menu_board">자유게시판</a>
+            <a href="/views/store.html" id="menu_store">스토어</a>
+            <a href="/lawsupport/main" id="menu_law">법률지원</a>
+            <a href="/views/review.html" id="menu_review">기업리뷰</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="/views/login.html" id="login">로그인</a>
+            <a href="/views/signup.html" id="signup">회원가입</a>
+            <div class="profile-icon">
+                <a href="/views/profile.html" id="profile-size">
+                    <img src="/src/assets/profile.png" alt="Profile" />
+                </a>
+            </div>
+            <div class="language-selector">
+                <img src="/src/assets/earth_icon.png" alt="earth" class="earth-icon">
+                <label for="languageSelector"></label>
+                <select id="languageSelector">
+                    <option value="en">English</option>
+                    <option value="ko" selected>한국어</option>
+                    <option value="zh">中文</option>
+                    <option value="ja">日本語</option>
+                    <option value="vi">Tiếng Việt</option>
+                    <option value="mn">Монгол</option>
+                    <option value="ru">Русский</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <form class="create-post" th:action="@{/post/modify/{id}(id=${postId})}" th:object="${postForm}" method="post" enctype="multipart/form-data">
+        <h2 class="page-title">게시물 수정</h2>
+        <h3>제목</h3>
+        <input class="post-title" type="text" th:field="*{subject}" name="subject" maxlength="30">
+        <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('subject')}">
+            <div th:each="err : ${#fields.errors('subject')}" th:text="${err}"></div>
+        </div>
+        <h3>내용</h3>
+        <textarea id="markdown-editor" th:field="*{content}" name="content"></textarea>
+        <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('content')}">
+            <div th:each="err : ${#fields.errors('content')}" th:text="${err}"></div>
+        </div>
+        <h3>사진 첨부 </h3>
+        <input type="file" id="image-upload" name="file">
+        <p>(사진 첨부는 최대 5MB)</p>
+        <div class="btn-container">
+            <button type="submit" id="post-button" class="btn-post">수정 완료</button>
+            <button th:href="@{/post/detail/{id}(id=${postId})}" id="cancel-button" class="btn-cancel">나가기</button>
+        </div>
+    </form>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <ul class="footer-btn">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="/views/Privacy_Policy.html" style="font-weight: bold;">개인정보처리방침</a></li>
+            <li><a href="#">문의/신고</a></li>
+            <li><a href="#">광고안내</a></li>
+        </ul>
+    </div>
+</footer>
+<script src="/src/js/createpost.js"></script>
+<script>
+    // SimpleMDE 에디터 초기화
+    var simplemde = new SimpleMDE({ element: document.getElementById("markdown-editor") });
+
+    // 파일 업로드 이벤트 리스너
+    document.getElementById('image-upload').addEventListener('change', function(event) {
+        var file = event.target.files[0];
+        if (file) {
+            var formData = new FormData();
+            formData.append('file', file);
+            fetch('/post/uploadImage', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.text())
+              .then(imageUrl => {
+                  // Markdown 에디터에 이미지 URL 삽입
+                  var markdownText = simplemde.value();
+                  simplemde.value(markdownText + `\n![Image](${imageUrl})\n`);
+              })
+              .catch(error => console.error('Error:', error));
+        }
+    });
+</script>
+</body>
+
+</html>

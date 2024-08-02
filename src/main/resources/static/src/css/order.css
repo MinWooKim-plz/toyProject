@@ -1,0 +1,149 @@
+/*notosans 토스용 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.order-container {
+    padding: 20px;
+}
+
+.order-container h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+form section {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+
+form h3 {
+    margin-bottom: 10px;
+    color: #555;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group label {
+    margin: 0;
+    flex: 1; /* 레이블과 인풋 요소 간의 비율 조정 */
+}
+
+.form-group input,
+.form-group select,
+.form-group button {
+    width: 70%; /* 가로 길이를 반으로 줄임 */
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+}
+
+.phone-input {
+    display: flex;
+    align-items: center;
+}
+
+.phone-input select,
+.phone-input input {
+    margin: 0 5px; /* 요소 간의 간격 */
+}
+
+.phone-input select {
+    width: calc(30% - 10px); /* 가로 길이를 조정 */
+}
+
+.phone-input input {
+    width: calc(35% - 10px); /* 가로 길이를 조정 */
+}
+
+/* 배송지 주소 */
+.address-title{
+    display: block;
+}
+
+.address-input {
+    height: 100%;
+    width: 100%;
+    display: block;
+    align-items: center;
+}
+
+.address-input input {
+    width: 20%;
+}
+
+.address-input button {
+    width: 100px;
+    margin-left: 10px; /* 버튼과 입력 필드 사이 간격 조정 */
+    padding: 10px 20px; /* 버튼의 패딩 조정 */
+    height: 42px; /* 버튼 높이 조정 */
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product-image {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.product-details p {
+    margin: 5px 0;
+}
+
+.shipping-fee,
+.payment-info {
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.payment-info h4 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+#payment-button {
+    font-family: "Noto Sans KR", sans-serif;
+    
+    width: 100%;
+    margin: 30px 0;
+    
+    padding: 11px 22px;
+    border: none;
+    border-radius:  8px;
+    
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+    
+
+    background-color: #5D9CA4;
+    color: #f9fcff;
+    
+}

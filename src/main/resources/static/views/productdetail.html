@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+    src="https://kit.fontawesome.com/b3f3cec821.js"
+    crossorigin="anonymous"
+  ></script>
+    <title>상품 상세 - 네트워커</title>
+    <link rel="stylesheet" href="../src/css/productdetail.css">
+    <link rel="stylesheet" href="../src/css/shared.css">
+</head>
+<body>
+    <header>
+      <div class="header-content">
+        <a href="/views/store.html" style="text-decoration: none">
+          <span class="logo">
+            <img src="../src/assets/logo.png" alt="logo" />
+            <h1 id="site_title">Networker</h1>
+          </span>
+        </a>
+        <div class="menu">
+          <a href="/main" id="menu_home">홈</a>
+          <a href="/views/news.html" id="menu_news">정보</a>
+          <a href="/post/list" id="menu_board">자유게시판</a>
+          <a href="/views/store.html" id="menu_store">스토어</a>
+          <a href="/lawsupport/main" id="menu_law">법률지원</a>
+          <a href="/views/review.html" id="menu_review">법률지원</a>
+        </div>
+        <div class="auth-buttons">
+          <a href="/views/login.html" id="login">로그인</a>
+          <a href="/views/signup.html" id="signup">회원가입</a>
+          <div class="profile-icon">
+            <a href="/views/profile.html"><img src="../src/assets/profile.png" alt="Profile"></a>
+          </div>
+          <div class="language-selector">
+            <img src="../src/assets/earth_icon.png" alt="earth" class="earth-icon">
+            <label for="languageSelector"></label>
+            <select id="languageSelector">
+              <option value="en">English</option>
+              <option value="ko" selected>한국어</option>
+              <option value="zh">中文</option>
+              <option value="ja">日本語</option>
+              <option value="vi">Tiếng Việt</option>
+              <option value="mn">Монгол</option>
+              <option value="ru">Русский</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+        <div class="navigation-buttons">
+            <a href="store.html" class="back-to-store-button"><i class="fa-solid fa-circle-arrow-left"></i>스토어</a>
+            <h2>제품 정보</h2>
+            <a href="cart.html" class="go-to-cart-button"><i class="fa-solid fa-cart-shopping"></i>장바구니</a>
+        </div>
+
+        <div class="product-detail-container">
+            <!-- 제품 정보가 로드된 후 여기에 표시됩니다. -->
+        </div>
+
+        <div class="product-detail-tabs">
+            <button class="tab-button" onclick="openTab('details')">상세정보</button>
+            <button class="tab-button" onclick="openTab('purchase')">구매후기</button>
+            <button class="tab-button" onclick="openTab('returns')">반품/교환</button>
+            <button class="tab-button" onclick="openTab('qa')">Q&A</button>
+        </div>
+        <div class="tab-content" id="details">상세 정보 내용</div>
+        <div class="tab-content" id="purchase">구매 후기 내용</div>
+        <div class="tab-content" id="returns">반품/교환 내용</div>
+        <div class="tab-content" id="qa">Q&A 내용</div>
+    </main>
+    
+    <footer>
+      <div class="footer-container">
+        <ul class="footer-btn">
+          <li><a href="#">이용약관</a></li>
+          <li><a href="privacy_Policy.html" style="font-weight: bold;">개인정보처리방침</a></li>
+          <li><a href="#">문의/신고</a></li>
+          <li><a href="#">광고안내</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="../src/js/productdetail.js"></script>
+</body>
+</html>

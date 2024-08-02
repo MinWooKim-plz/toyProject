@@ -1,0 +1,135 @@
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #fff; /* 배경 색상 명확히 지정 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.post-list {
+    padding: 20px;
+}
+
+.post {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
+}
+
+.post h3 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.post p {
+    margin: 0;
+    color: #666;
+}
+
+.post span {
+    display: block;
+    margin-top: 10px;
+    color: #999;
+    font-size: 12px;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-info img {
+    background-color: #759465;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-info h2 {
+    margin: 10px 0;
+}
+
+.profile-info p {
+    height: 30px;
+    color: #666;
+    margin: 5px 0 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+#nationality{
+    display: inline-block;
+}
+.flag{
+    display: inline-block;
+}
+#flag {
+    height: 20px;
+    width: auto;
+    background-color: #fff;
+    border-radius: 0%;
+    margin: 0 5px;
+}
+
+.logout-btn {
+    background-color: #759465;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.profile-sections section {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    width: calc(70%);
+    max-width: 400px;
+}
+
+.profile-sections h3 {
+    margin-top: 0;
+}
+
+.profile-sections ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-sections ul li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-sections ul li:last-child {
+    border-bottom: none;
+}
+
+.profile-sections ul li:hover {
+    background-color: #e0e0e0;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:c="http://www.w3.org/1999/XSL/Transform">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 - Networker</title>
+    <link rel="stylesheet" href="/src/css/post.css">
+    <script src="/src/js/lang.js" defer></script>
+    <link rel="stylesheet" href="/src/css/shared.css" />
+</head>
+
+<body>
+<header>
+    <div class="header-content">
+        <a href="/main" style="text-decoration: none">
+                <span class="logo">
+                    <img src="/src/assets/logo.png" alt="logo" />
+                    <h1 id="site_title">Networker</h1>
+                </span>
+        </a>
+        <div class="menu">
+            <a href="/main" id="menu_home">홈</a>
+            <a href="/views/news.html" id="menu_news">정보</a>
+            <a href="/post/list" id="menu_board">자유게시판</a>
+            <a href="/views/store.html" id="menu_store">스토어</a>
+            <a href="/lawsupport/main" id="menu_law">법률지원</a>
+            <a href="/views/review.html" id="menu_review">기업리뷰</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="/views/login.html" id="login">로그인</a>
+            <a href="/views/signup.html" id="signup">회원가입</a>
+            <div class="profile-icon">
+                <a href="/views/profile.html" id="profile-size">
+                    <img src="/src/assets/profile.png" alt="Profile" />
+                </a>
+            </div>
+            <div class="language-selector">
+                <img src="/src/assets/earth_icon.png" alt="earth" class="earth-icon">
+                <label for="languageSelector"></label>
+                <select id="languageSelector">
+                    <option value="en">English</option>
+                    <option value="ko" selected>한국어</option>
+                    <option value="zh">中文</option>
+                    <option value="ja">日本語</option>
+                    <option value="vi">Tiếng Việt</option>
+                    <option value="mn">Монгол</option>
+                    <option value="ru">Русский</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="post" id="post-details">
+        <h2>자유게시판</h2>
+        <div class="content" id="post-info">
+            <h1 th:text="${post.subject}"></h1>
+            <h4>
+                <td th:text="${post.author != null ? post.author.nickname : 'Unknown'}"></td>
+                <td th:text="${#temporals.format(post.createDate, 'yyyy-MM-dd-HH:mm')}"></td>
+            </h4>
+            <!-- Markdown을 HTML로 변환한 결과를 렌더링 -->
+            <div id="post-content" th:utext="${postContent}"></div>
+        </div>
+        <div class="center-align">
+            <!--<button id="recommend" class="recommend-button" type="button" onclick="recommend()">추천</button>-->
+            <form th:action="@{/post/recommend/{id}(id=${post.id})}" method="post"
+                  th:if="${currentUser != null}">
+                <button id="recommend" type="submit" class="recommend-button">추천</button>
+            </form>
+        </div>
+        <div class="right-align">
+            <!-- 수정 버튼을 위한 폼 -->
+            <form th:action="@{/post/modify/{id}(id=${post.id})}" method="get">
+                <button id="edit" type="submit" class="btn btn-outline-secondary">수정</button>
+            </form>
+
+            <!-- 삭제 버튼을 위한 폼, 로그인된 사용자와 게시물 작성자 비교 -->
+            <form th:action="@{/post/delete/{id}(id=${post.id})}" method="post"
+                  onsubmit="return confirm('정말로 삭제하시겠습니까?');"
+                  th:if="${post.author != null and currentUser != null and post.author.id == currentUser.id}">
+                <button id="delete" type="submit" class="btn btn-outline-danger">삭제</button>
+            </form>
+        </div>
+
+        <h5 th:text="|댓글 ${#lists.size(post.commentList)}개|"></h5>
+        <tbody>
+        <tr th:each="comment : ${post.commentList}" class="comment-row">
+            <td>
+                <div class="comment">
+                    <span th:text="${comment.author != null ? comment.author.nickname : 'Unknown'}"></span>
+                    <span th:text="${#temporals.format(comment.createDate, 'yyyy-MM-dd-HH:mm')}"></span>
+                </div>
+                <div class="comment-content" th:text="${comment.content}"></div>
+            </td>
+        </tr>
+        </tbody>
+
+        <form class="comment-write" th:action="@{|/comment/create/${post.id}|}" method="post">
+            <div class="user-id" id="user-info"></div><!--임시아이디영역-->
+            <div class="input-container">
+                <textarea id="comment-input" class="text-input"  name="content"></textarea>
+                <button id="comment-button" class="text-button" type="submit">작성</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <ul class="footer-btn">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="privacy_Policy.html" style="font-weight: bold;">개인정보처리방침</a></li>
+            <li><a href="#">문의/신고</a></li>
+            <li><a href="#">광고안내</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="/src/js/post.js"></script>
+</body>
+
+</html>
